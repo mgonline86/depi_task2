@@ -1,0 +1,268 @@
+:root {
+    --text: #09060e;
+    --background: #f7f3fb;
+    --primary: #7d36d5;
+    --secondary: #b789f0;
+    --accent: #9a4ff5;
+}
+
+* {
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--background);
+    color: var(--text);
+    min-height: 100vh;
+}
+
+header {
+    position: sticky;
+    top: 0;
+    background-color: var(--background);
+    color: var(--text);
+    text-align: center;
+    margin-bottom: 20px;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+}
+
+main {
+    margin-inline: auto;
+    max-width: 800px;
+    padding: 20px;
+}
+
+section {
+    margin-bottom: 40px;
+}
+
+h1 {
+    font-size: 2rem;
+    color: var(--primary);
+}
+
+h2 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+}
+
+h3 {
+    font-size: 1.25rem;
+}
+
+h4 {
+    font-size: 1rem;
+}
+
+h5 {
+    font-size: 0.75rem;
+    color: var(--secondary);
+}
+
+h6 {
+    font-size: 0.5rem;
+}
+
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+.accordion {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+    max-width: 600px;
+    margin-inline: auto;
+    border-radius: 10px;
+    background-color: #f5f5f5;
+    border-radius: 10px;
+    background-color: #ffffff;
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.5);
+}
+
+.accordionCollapse {
+    background-color: var(--primary);
+    position: relative;
+    display: grid;
+    grid-template-columns: 1fr 1fr 50px;
+    grid-template-rows: 70px 1fr;
+    border-radius: 10px;
+}
+
+.accordionCheckbox, .accordionIcon {
+    align-self: center;
+    justify-self: center;
+}
+
+.accordionTitle, .accordionCheckbox, .accordionIcon {
+    grid-row: 1;
+}
+.accordionTitle {
+    font-size: 1.25rem;
+    color: var(--background);
+    padding: 20px;
+    grid-column: 1/3;
+    align-self: center;
+}
+
+.accordionCheckbox {
+    z-index: 1;
+    cursor: pointer;
+    grid-column: 1/4;
+    height: 100%;
+    width: 100%;
+    opacity: 0;
+}
+
+.accordionIcon {
+    grid-column: 3/4;
+    color: var(--background);
+    font-size: 1.5rem;
+    transition: all 0.5s;
+}
+
+.accordionCheckbox:checked+.accordionIcon {
+    transform: rotate(180deg);
+    transition: all 0.5s;
+}
+
+.accordionBody {
+    grid-column: 1/4;
+    width: 100%;
+    background-color: var(--secondary);
+    color: var(--text);
+    border-radius: 0 0 10px 10px;
+    max-height: 0;
+    opacity: 0;
+    transition: all 0.3s ease-in-out;
+}
+
+.accordionCheckbox:checked~.accordionBody {
+    max-height: 700px;
+    opacity: 100%;
+    padding: 20px;
+    transition: all 0.6s ease-in-out;
+}
+
+.formGroup {
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+.formGroup label {
+    margin-bottom: 5px;
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--text);
+    text-align: center;
+}
+
+.formGroup input {
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    font-size: 20px;
+    text-align: center;
+}
+
+.formGroup input:focus {
+    outline: 2px solid var(--primary);
+    background-color: var(--background);
+}
+
+.formGroup input[type="radio"] {
+    accent-color: var(--text);
+    cursor: pointer;
+    width: 20px;
+    height: 20px;
+}
+
+.formGroup button[type="submit"] {
+    background-color: var(--accent);
+    color: var(--background);
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    font-weight: 600;
+    padding: 10px;
+    cursor: pointer;
+}
+
+.formGroup button[type="submit"]:hover {
+    background-color: var(--primary);
+}
+
+.formGroup fieldset {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    border: var(--primary) 2px solid;
+    padding: 10px;
+    border-radius: 5px;
+    height: 100px;
+    text-align: center;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
+.formGroup legend {
+    font-size: 16px;
+    font-weight: 600;
+    padding-inline: 10px;
+    color: var(--text);
+}
+
+.formGroup .output {
+    font-size: 20px;
+    font-weight: 600;
+    color: var(--text);
+    flex-grow: 0.2;
+}
+
+.formGroup .radioGroup {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.formGroup .radioGroup label {
+    margin: 0;
+    font-size: 25px;
+}
+
+.receiptRow {
+    font-size: 12px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+
+.an-z-out-in {
+    animation: 0.7s an-z-out-in ease-in-out;
+}
+
+@keyframes an-z-out-in {
+    0% {
+        transform: scale(0);
+    }
+
+    50% {
+        transform: scale(2);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
